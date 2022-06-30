@@ -16,7 +16,8 @@
 
                     {{ __('Has iniciado sesion!') }}
                     <div>
-                        <a href="{{route('formulario_1')}}" class="btn btn-primary">Formulario 1</a>
+                        <a href="{{route('formulario_1')}}" class="btn btn-primary">Registro de Alumno</a>
+                        <a href="{{route('alumnosList')}}" class="btn btn-primary">Lista de Alumnos</a>
                     </div>
                 </div>
             </div>

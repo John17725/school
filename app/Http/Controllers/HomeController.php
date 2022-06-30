@@ -28,4 +28,10 @@ class HomeController extends Controller
     public function formulario(){
         return view('tables.users');
     }
+    public function getAlumnos(){
+        return view('tables.listaAlumnos');
+    }
+    public function saveAlumnos(Request $request){
+        dd($request);
+    }
 }
