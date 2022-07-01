@@ -9,7 +9,7 @@
         @csrf
         <div class="form-group">
             <label for="name">Nombre</label>
-            <input type="text" class="form-control" name="" id="name" aria-describedby="emailHelp">
+            <input type="text" class="form-control" name="nombre" id="name" aria-describedby="emailHelp">
         </div>
         <div class="form-group">
             <label for="apellidos">Apellidos</label>
@@ -28,7 +28,7 @@
             <input type="text" class="form-control" name="grupo" id="grupo" aria-describedby="emailHelp">
         </div>
         <div class="mt-4">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Registrar Alumno</button>
         </div>
     </form>
 </div>
