@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Alumnos;
+use PDF;
 use App\Models\ReportesAlumnos;
 
 use Illuminate\Http\Request;
@@ -64,5 +65,24 @@ class HomeController extends Controller
         $alumno = Alumnos::find($id);
         // dd($reportes);
         return view('tables.listaReporteAlumno', compact('reportes','alumno'));
+    }
+    public function printReport($id_report){
+        // dd($id_report);
+        $dataReport = ReportesAlumnos::find($id_report);
+        $dataAlumno = Alumnos::find($dataReport->alumno_id);
+        $data = [
+            'reporte' => $dataReport,
+            'alumno' => $dataAlumno
+        ];
+        // dd($data);
+        $pdf = PDF::loadView('reports.view_print_report', $data,[], [
+            'title' => 'REPORTE DE ALUMNO',
+            'margin_header'=> 0,
+            'format' => 'A3',
+            'margin_left' => 0,
+            'margin_right' => 0,
+            'orientation'=> 'P',
+          ]);
+        return $pdf->stream('document.pdf', compact('data'));
     }
 }

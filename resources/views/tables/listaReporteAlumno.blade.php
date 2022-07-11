@@ -15,6 +15,7 @@
                 <th scope="col">Profesor que realizo reporte</th>
                 <th scope="col">Materia</th>
                 <th scope="col">Observaciones o reporte</th>
+                <th scope="col">Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -29,6 +30,7 @@
                             <th>{{$report->materia}}</th>
                         @endif
                         <th>{{$report->observaciones}}</th>
+                        <th><a href="{{route('printReport', $report->id)}}" class="btn btn-info">Imprimir reporte</a></th>
                     </tr>
                 @endforeach
             @else
